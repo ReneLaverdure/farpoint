@@ -6,8 +6,9 @@ export default function Store() {
     // let {id} = useParams();
     
   return (
-    <div>
+    <div >
        <h1>Shop</h1>
+
     </div>
   )
 }
