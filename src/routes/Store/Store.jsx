@@ -1,11 +1,13 @@
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
+import Shoes from '../../store-data'
+
 
 export default function Store() {
-    let {id} = useParams();
+    // let {id} = useParams();
     
   return (
     <div>
-        <h2>{id}</h2>
+       <h1>Shop</h1>
     </div>
   )
 }
