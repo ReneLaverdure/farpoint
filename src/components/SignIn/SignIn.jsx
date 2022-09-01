@@ -3,7 +3,7 @@ import './SignIn.scss';
 import FormInput from '../FormInput/FormInput';
 
 import { signInWithGooglePopup, signInAuthUserWithEmailAndPassword } from '../../utils/firebase';
-import Button from '../button/Button';
+import Button from '../Button/Button';
 
 const defaultFormFields = {
   email: '',

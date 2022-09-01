@@ -1,0 +1,35 @@
+.checkoutItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &-name{
+        margin-right: auto;
+        font-size: 1.5rem;
+    }
+    &-price{
+        margin-right: auto;
+        margin-left: -50%;
+        font-size: 1.5rem;
+    }
+
+    &-quantity{
+        display: flex;
+
+        margin: auto 0px;
+
+        &__control {
+            margin: 0px 2rem;   
+            font-size: 1.2rem; 
+        }
+        &__number{
+            font-size: 1.5rem;
+        }
+    }
+
+    &-remove{
+        font-size: 2rem;
+    }
+}
+

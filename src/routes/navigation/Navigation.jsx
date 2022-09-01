@@ -1,12 +1,17 @@
 import {Link, Outlet} from 'react-router-dom'
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
+import { CartContext } from '../../contexts/cart';
 
 import { signOutUser } from '../../utils/firebase';
-
+import CartIcon from '../../components/CartIcon/CartIcon';
 import Footer from '../../components/footer/Footer';
+import CartSide from '../../components/CartSide/CartSide';
+
 import './navigation.scss'
 
-export default function navigation() {
+export default function Navigation() {
+    const {isCartOpen} = useContext(CartContext)
+
   return (
     <Fragment>
         <nav className='navbar'>
@@ -36,10 +41,17 @@ export default function navigation() {
                 <div onClick={signOutUser} className='navbar-container-link' >
                     <p>sign Out</p>
                 </div>
+                <div className="navbar-container-link">
+                    <CartIcon  />
+                </div>
+                
             </div>
-
+         {isCartOpen && <CartSide />}       
         </nav>
-        <Outlet />
+        <div className="mainContainer">
+            <Outlet />
+        </div>
+        
         <Footer />
     </Fragment>
   )

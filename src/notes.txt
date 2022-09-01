@@ -1,0 +1,23 @@
+firebase utils
+writebatch, collection, query, getDocs
+addCollectionAndDocument
+addCollectionAndDocument useeffect in products to wtire to db
+
+getCategoriesAndDocuments
+querySnapshot return object of categories
+useEffect with a wrap asycn function
+
+shop page
+return a preview of first 4 product per categories
+add preview component
+
+
+create nested routes for each category
+Shop component becomes a page - preview page
+
+create category componet for each product line
+
+Directory component tree
+
+css in JS (Styled componets)
+
