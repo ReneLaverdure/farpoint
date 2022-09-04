@@ -5,7 +5,7 @@ import { CategoriesContext } from '../../contexts/categories';
 import ProductCard from '../../components/ProductCard/ProductCard'
 
 export default function Category() {
-    const  {category} = useParams()
+    const {category} = useParams()
     const {categoriesMap} = useContext(CategoriesContext)
     const [products, setProduce] = useState(categoriesMap[category]);
 
