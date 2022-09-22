@@ -1,17 +1,21 @@
 import {Link, Outlet} from 'react-router-dom'
 import { Fragment, useContext } from 'react';
 import { CartContext } from '../../contexts/cart';
-
+import {useSelector} from 'react-redux'
 import { signOutUser } from '../../utils/firebase';
 import CartIcon from '../../components/CartIcon/CartIcon';
 import Footer from '../../components/footer/Footer';
 import CartSide from '../../components/CartSide/CartSide';
 
+import { getCartStatus } from '../../store/features/cart';
+
 import './navigation.scss'
 
 export default function Navigation() {
-    const {isCartOpen} = useContext(CartContext)
-
+    // const {isCartOpen} = useContext(CartContext)
+    const cartStatus = useSelector(getCartStatus)
+  
+    const currentUser = useSelector((state) => state.user.currentUser)
   return (
     <Fragment>
         <nav className='navbar'>
@@ -35,18 +39,25 @@ export default function Navigation() {
                 <Link className='navbar-container-link' to="/about">
                     <p>About</p>
                 </Link>
-                <Link className='navbar-container-link' to="/sign-in">
+
+                {currentUser ? (
+                    <div onClick={signOutUser} className='navbar-container-link' >
+                        <p>sign Out</p>
+                    </div>
+                ) : (
+                    <Link className='navbar-container-link' to="/sign-in">
                     <p>Sign In</p>
                 </Link>
-                <div onClick={signOutUser} className='navbar-container-link' >
-                    <p>sign Out</p>
-                </div>
+                )
+
+                }
+                
                 <div className="navbar-container-link">
                     <CartIcon  />
                 </div>
                 
             </div>
-         {isCartOpen && <CartSide />}       
+         {cartStatus && <CartSide />}       
         </nav>
         <div className="mainContainer">
             <Outlet />

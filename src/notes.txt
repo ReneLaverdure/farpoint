@@ -21,3 +21,34 @@ Directory component tree
 
 css in JS (Styled componets)
 
+
+todo list
+covert cart from cotext to redux toolkit
+   done -add cart item
+   done -remove cart item
+   done -clear cart cartItems
+   done -set cart to Open 
+   **done but not dry -update cart**
+remove cart context 
+
+plug ito react componmet 
+    done -cart icon
+   done -cart dropdown
+    done -product-card
+    done -checkout componet
+    done -checkout-item component
+
+redux persist
+    config in store.JS
+    persist cart
+
+redux thunk
+    categories array
+    shop component set category
+        state:
+            add isLoading
+            errors
+    categories preview
+     add spinner for loading
+
+hello my name is rene laverdure 

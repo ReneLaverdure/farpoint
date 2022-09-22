@@ -3,12 +3,21 @@ import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../contexts/cart'
 import CartItem from '../CartItem/CartItem';
 import Button from '../Button/Button'
+
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleCart, getCartItems } from '../../store/features/cart';
+
 import './CartSide.scss'
 
 export default function CartSide() {
-    const {cartItems, isCartOpen, setIsCartOpen} = useContext(CartContext);
-    const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen);
+    // const {cartItems, isCartOpen, setIsCartOpen} = useContext(CartContext);
+
+    const cartItems = useSelector(getCartItems)
+    const dispatch = useDispatch()
+    const toggleIsCartOpen = () => dispatch(toggleCart());
+
     const navigate = useNavigate();
+
 
     const goToCheckoutHandler = () => {
         toggleIsCartOpen();
