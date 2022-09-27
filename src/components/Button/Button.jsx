@@ -1,11 +1,11 @@
 import React from 'react'
 import './Button.scss'
-
-export default function Button({children, buttonType, ...otherProps}) {
+import Spinner from '../Spinner/Spinner'
+export default function Button({children, buttonType, isLoading, ...otherProps}) {
      
   return (
-    <button {...otherProps}>
-        {children}
+    <button disabled={isLoading} {...otherProps}>
+        {isLoading ? <Spinner/> : children}
     </button>
   )
 }

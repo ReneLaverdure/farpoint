@@ -33,7 +33,7 @@ remove cart context
 
 plug ito react componmet 
     done -cart icon
-   done -cart dropdown
+    done -cart dropdown
     done -product-card
     done -checkout componet
     done -checkout-item component
@@ -50,5 +50,3 @@ redux thunk
             errors
     categories preview
      add spinner for loading
-
-hello my name is rene laverdure 

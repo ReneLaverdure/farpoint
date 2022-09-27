@@ -5,9 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter } from 'react-router-dom';
-// import { UserProvider } from './contexts/user';
-// import { CategoriesProvider } from './contexts/categories';
-import { CartProvider } from './contexts/cart';
+// import {Elements} from '@stripe/react-stripe-js'
+// import { stripePromise } from './utils/stripe/stripe';
 
 //redux import 
 import { Provider } from 'react-redux';
@@ -18,13 +17,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        {/* <UserProvider> */}
-          {/* <CategoriesProvider> */}
-            {/* <CartProvider> */}
-              <App />
-            {/* </CartProvider> */}
-          {/* </CategoriesProvider> */}
-        {/* </UserProvider> */}
+        <App />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>

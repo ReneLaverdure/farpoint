@@ -2,12 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 //double check non-serializable value
 const initialState = {
-    
+    currentUser: {}
 }
 
 export const userSlice = createSlice({
     name: 'user',
-    initialState: {currentUser: initialState},
+    initialState,
     reducers: {
         setCurrentUser: (state, action) => {
             console.log(action.payload)
@@ -15,6 +15,8 @@ export const userSlice = createSlice({
         }
     }
 })
+
+export const getUser = state => state.user.currentUser.displayName
 
 export const {setCurrentUser} = userSlice.actions
 export default userSlice.reducer
