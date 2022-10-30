@@ -19,8 +19,7 @@ export default function PaymentForm() {
   const currentUser = useSelector(getUser)
   const [isProcessingPayment, setisProcessingPayment] = useState(false)
   const [clientSecret, setClientSecret] = useState("")
-  console.log(amount)
-  console.log(currentUser)
+
 
   useEffect(() => {
     //create payment intent on page load
@@ -38,8 +37,6 @@ export default function PaymentForm() {
           setClientSecret(data.paymentIntent.client_secret)
         })
     }
-
-
   }, [])
 
   const paymentHandler = async (e) => {
@@ -50,13 +47,12 @@ export default function PaymentForm() {
     }
 
     setisProcessingPayment(true)
-
-
+ 
     const paymentResult = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: elements.getElement(CardElement),
         billing_details: {
-          name: currentUser ? currentUser : 'Guest'
+          name: currentUser.displayName ? currentUser.displayName : 'Guest'
         }
       }
     })
@@ -70,10 +66,8 @@ export default function PaymentForm() {
         alert('Payment successful')
       }
     }
-
   }
-
-
+ 
   return (
     <PaymentFormContainer>
       <FormContainer onSubmit={paymentHandler}>

@@ -1,6 +1,5 @@
 import {Link, Outlet} from 'react-router-dom'
-import { Fragment, useContext } from 'react';
-import { CartContext } from '../../contexts/cart';
+import { Fragment } from 'react';
 import {useSelector} from 'react-redux'
 import { signOutUser } from '../../utils/firebase';
 import CartIcon from '../../components/CartIcon/CartIcon';
@@ -12,7 +11,6 @@ import { getCartStatus } from '../../store/features/cart';
 import './navigation.scss'
 
 export default function Navigation() {
-    // const {isCartOpen} = useContext(CartContext)
     const cartStatus = useSelector(getCartStatus)
   
     const currentUser = useSelector((state) => state.user.currentUser)
@@ -59,7 +57,7 @@ export default function Navigation() {
             </div>
          {cartStatus && <CartSide />}       
         </nav>
-        <div className="mainContainer">
+        <div>
             <Outlet />
         </div>
         

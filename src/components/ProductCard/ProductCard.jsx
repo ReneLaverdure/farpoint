@@ -1,19 +1,26 @@
-import {useContext} from 'react'
 import Button from '../Button/Button'
-import { CartContext } from '../../contexts/cart';
 
 import { useDispatch } from 'react-redux';
 import { addCartItem, updateCartTotal } from '../../store/features/cart';
-import './ProductCard.scss'
+import {Link, useParams, matchRoutes, useLocation} from 'react-router-dom'
+
 import { 
   ProductCardContainer,
-  ProductImage
+  ProductImage,
+  ProductContent
  } from './ProductCard.style';
 
-export default function ProductCard({product}) {
-    const {name, imageUrl, price} = product;
-    const { addItemToCart } = useContext(CartContext);
+export default function ProductCard({product, url}) {
+    const {name, imageUrl, price, category} = product;
     const dispatch = useDispatch()
+
+    let params = useParams()
+    // console.log(params)
+    // console.log(name)
+    let link = category + "/" + name;
+    // console.log(link)
+
+ 
     
     const addProductToCart = () => {
       dispatch(addCartItem(product))
@@ -23,11 +30,16 @@ export default function ProductCard({product}) {
   return (
     <ProductCardContainer>
         <ProductImage imageUrl={imageUrl} />
-        <div className="productCard-content" >
+          <ProductContent>
             <span>{name}</span>
             <span>${price}</span>
-        </div>
+          </ProductContent>
         <Button onClick={addProductToCart}>Add to cart</Button>
+        <Button onClick={addProductToCart}>
+          <Link to={`${url}`}>
+            View Item
+          </Link>
+        </Button>
     </ProductCardContainer>
   )
 }

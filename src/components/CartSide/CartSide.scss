@@ -1,7 +1,7 @@
 /* The side navigation menu */
 .sidenav {
     height: 100%; /* 100% Full-height */
-    width: 300px; /* 0 width - change this with JavaScript */
+    width: 400px; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
@@ -36,9 +36,9 @@
     margin-left: 50px;
   }
 
-.cart-items{
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    overflow: scroll;
-}
+// .cart-items{
+//     height: 80%;
+//     display: flex;
+//     flex-direction: column;
+    
+// }

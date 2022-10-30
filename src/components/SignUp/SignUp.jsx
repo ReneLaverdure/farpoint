@@ -1,9 +1,12 @@
 import {useState, useEffect} from 'react'
-import './SignUp.scss'
 
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../utils/firebase'
 import FormInput from '../FormInput/FormInput'
 import Button from '../Button/Button'
+
+//redux
+import { toggleAuth } from '../../store/features/utilSlice';
+import { useAppDispatch } from '../../store/hooks';
 
 const defaultFormFields = {
     username: '',
@@ -16,6 +19,10 @@ export default function SignUp() {
 
     const [formFields, setFormFields] = useState(defaultFormFields)
     const { username, email, password, confirmPassword } = formFields;
+
+    const dispatch = useAppDispatch()
+    
+    const authChange = () => dispatch(toggleAuth())
 
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
@@ -65,6 +72,7 @@ export default function SignUp() {
             <FormInput type="password" label="password" name="password" value={password} onChange={handleChange}/>
             <FormInput type="password" label="Confirm Password" name="confirmPassword" value={confirmPassword} onChange={handleChange}/>
             <Button type="submit">Sign Up</Button>
+            <Button width="100%" onClick={authChange}>Login</Button>
         </form>
     </div>
   )

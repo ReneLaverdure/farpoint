@@ -6,7 +6,7 @@ const initialState = {
 }
 
 export const categorySlice = createSlice({
-    name: 'category',
+    name: 'category', 
     initialState: {categoriesArray: initialState},
     reducers: {
         setCategoriesArray: (state, action) => {
@@ -15,9 +15,14 @@ export const categorySlice = createSlice({
                       acc[title.toLowerCase()] = items;
                       return acc;
                     }, {})
+        },
+        getProduct: (state, action) => {
+            
         }
     }
 })
+
+export const getProductArray = (state) => state.category.categoriesArray.categories
 
 export const {setCategoriesArray} = categorySlice.actions
 export default categorySlice.reducer

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const ProductCardContainer = styled.div`
+    background-color: #e4e4e4;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -20,4 +21,10 @@ export const ProductImage = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
     background-image: ${({imageUrl}) => `url(${imageUrl})`};
+`
+
+export const ProductContent = styled.div`
+    display: flex;
+    padding: 10px;
+    
 `

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import CheckoutItem from '../../components/CheckoutItem/CheckoutItem';
 
 import { useSelector } from 'react-redux';
@@ -8,13 +7,11 @@ import {Elements} from '@stripe/react-stripe-js'
 import { stripePromise } from '../../utils/stripe/stripe';
 
 import PaymentForm from '../../components/PaymentForm/PaymentForm';
-
 import './Checkout.scss'
 
 export default function Checkout() {
     const cartItems = useSelector(getCartItems)
     const cartTotal = useSelector(getCartTotal)
-
 
   return (
     <div className='CheckoutContainer'>

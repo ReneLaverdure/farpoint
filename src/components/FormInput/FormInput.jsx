@@ -1,10 +1,11 @@
-import React from 'react'
+import {FormInputContainer, FormInputLabel, FormInputStyle} from './FormInput.style'
 
 export default function FormInput({label, ...otherProps}) {
+
   return (
-    <div>
-        <label htmlFor="">{label}</label>
-        <input {...otherProps} />
-    </div>
+    <FormInputContainer>
+        <FormInputLabel htmlFor="">{label}</FormInputLabel>
+        <FormInputStyle {...otherProps} />
+    </FormInputContainer>
   )
 }

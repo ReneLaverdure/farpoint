@@ -26,6 +26,7 @@ function App() {
   }, [dispatch]);
 
   return (
+
     <Routes>
       <Route path='/' element={<Navigation/>}>
         <Route index element={<Home />} />
@@ -39,6 +40,7 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
       </Route>
     </Routes>
+ 
   );
 }
 
